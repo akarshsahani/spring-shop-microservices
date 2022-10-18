@@ -1,0 +1,81 @@
+package com.example.demo.dto;
+
+import java.math.BigDecimal;
+
+
+public class InventoryResponse {
+	
+	private String skuCode;
+	private boolean isInStock;
+	
+	
+	public InventoryResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public InventoryResponse(String skuCode, boolean isInStock) {
+		super();
+		this.skuCode = skuCode;
+		this.isInStock = isInStock;
+	}
+
+
+
+	public String getSkuCode() {
+		return skuCode;
+	}
+
+
+	public void setSkuCode(String skuCode) {
+		this.skuCode = skuCode;
+	}
+
+
+	public boolean isInStock() {
+		return isInStock;
+	}
+
+
+	public void setInStock(boolean isInStock) {
+		this.isInStock = isInStock;
+	}
+	
+	//Builder Class
+	public static InventoryResponseBuilder builder() {
+ 		return new InventoryResponseBuilder();
+ 	}
+	
+	public static class InventoryResponseBuilder<T> {
+		private String skuCode;
+		private boolean isInStock;
+		
+ 		
+ 		private InventoryResponseBuilder() {}
+ 		
+ 		public InventoryResponseBuilder skuCode(String skuCode) {
+ 			this.skuCode = skuCode;
+ 			return this;
+ 		}
+ 		
+ 		public InventoryResponseBuilder isInStock(boolean isInStock) {
+ 			this.isInStock = isInStock;
+ 			return this;
+ 		}
+ 		
+ 		
+ 		
+ 		
+ 		@java.lang.Override public String toString() {
+ 			return "InventoryResponseBuilder(skuCode = " + skuCode + ", isInStock = " + isInStock +" )";
+ 		}
+ 		
+ 		public InventoryResponse build() {
+ 			return new InventoryResponse(skuCode, isInStock);
+ 		}
+ 	}
+
+	
+
+}
